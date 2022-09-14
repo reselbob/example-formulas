@@ -1,33 +1,22 @@
-// program to check if a number is prime or not
+
+function isPrime(num) {
+    for (let i = 2; i * i <= num; i++)
+        if (num % i === 0)
+            return false;
+    return num > 1;
+}
 
 // take input from the user
-const number = parseInt(prompt("Enter a positive number: "));
-let isPrime = true;
+const startingNumber = parseInt(prompt("Enter a starting  number: "));
+//const startingNumber = 24;
+let b = false;
+let thePrime = startingNumber + 1;
 
-// check if number is equal to 1
-if (number === 1) {
-    console.log("1 is neither prime nor composite number.");
-}
 
-// check if number is greater than 1
-else if (number > 1) {
-
-    // looping through 2 to number-1
-    for (let i = 2; i < number; i++) {
-        if (number % i == 0) {
-            isPrime = false;
-            break;
-        }
+while (!b){
+    if(isPrime(thePrime)){
+        console.log(`The first prime number after ${startingNumber} is ${thePrime}`)
+        b = true;
     }
-
-    if (isPrime) {
-        console.log(`${number} is a prime number`);
-    } else {
-        console.log(`${number} is a not prime number`);
-    }
-}
-
-// check if number is less than 1
-else {
-    console.log("The number is not a prime number.");
+    thePrime++;
 }
