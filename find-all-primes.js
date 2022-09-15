@@ -16,7 +16,7 @@ for (let i =3; i <=limit; i++){
     }
     i++;
 }
-console.log(`Here are all the prime numbers under the ${limit}:`)
+console.log(`Here are all the prime numbers under ${limit}:`)
 finds.forEach(f =>{
   console.log(f);
 })
